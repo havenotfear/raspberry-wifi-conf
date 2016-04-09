@@ -182,7 +182,7 @@ module.exports = function() {
                 // DHCP for the wlan0 interface
                 function update_interfaces(next_step) {
                     write_template_to_file(
-                        "/home/pi/raspberry-wifi-conf/etc/network/interfaces.ap.template",
+                        "/home/pi/raspberry-wifi-conf/assets/etc/network/interfaces.ap.template",
                         "/etc/network/interfaces",
                         context, next_step);
                 },
@@ -192,7 +192,7 @@ module.exports = function() {
                     var context = config.access_point;
                     // We must enable this to turn on the access point
                     write_template_to_file(
-                        "/home/pi/raspberry-wifi-conf/etc/dhcp/dhcpcd.conf.template",
+                        "/home/pi/raspberry-wifi-conf/assets/etc/dhcp/dhcpcd.conf.template",
                         "/etc/dhcpcd.conf",
                         context, next_step);
                 },
@@ -200,7 +200,7 @@ module.exports = function() {
                 // Enable the interface in the dhcp server
                 function update_dns_interface(next_step) {
                     write_template_to_file(
-                        "/home/pi/raspberry-wifi-conf/etc/dnsmasq/dnsmasq.conf.template",
+                        "/home/pi/raspberry-wifi-conf/assets/etc/dnsmasq/dnsmasq.conf.template",
                         "/etc/dnsmasq.conf",
                         context, next_step);
                 },
@@ -208,14 +208,14 @@ module.exports = function() {
                 // Enable hostapd.conf file
                 function update_hostapd_conf(next_step) {
                     write_template_to_file(
-                        "/home/pi/raspberry-wifi-conf/etc/hostapd/hostapd.conf.template",
+                        "/home/pi/raspberry-wifi-conf/assets/etc/hostapd/hostapd.conf.template",
                         "/etc/hostapd/hostapd.conf",
                         context, next_step);
                 },
 
                 function update_hostapd_default(next_step) {
                     write_template_to_file(
-                        "/home/pi/raspberry-wifi-conf/etc/default/hostapd.template",
+                        "/home/pi/raspberry-wifi-conf/assets/etc/default/hostapd.template",
                         "/etc/default/hostapd",
                         context, next_step);
                 },
@@ -270,7 +270,7 @@ module.exports = function() {
                 //
                 function update_dhcpcd(next_step) {
                     write_template_to_file(
-                        "/home/pi/raspberry-wifi-conf/etc/default/dhcpcd.conf",
+                        "/home/pi/raspberry-wifi-conf/assets/etc/default/dhcpcd.conf",
                         "/etc/dhcpcd.conf",
                         connection_info, next_step);
                 },
@@ -278,7 +278,7 @@ module.exports = function() {
                 // Update /etc/network/interface with correct info...
                 function update_dhcp(next_step) {
                     write_template_to_file(
-                        "/home/pi/raspberry-wifi-conf/etc/network/interfaces.wifi.template",
+                        "/home/pi/raspberry-wifi-conf/assets/etc/network/interfaces.wifi.template",
                         "/etc/network/interfaces",
                         connection_info, next_step);
                 },
@@ -286,7 +286,7 @@ module.exports = function() {
                 // Update /etc/network/interface with correct info...
                 function update_wpa(next_step) {
                     write_template_to_file(
-                        "/home/pi/raspberry-wifi-conf/etc/wpa_supplicant/wpa_supplicant.conf.template",
+                        "/home/pi/raspberry-wifi-conf/assets/etc/wpa_supplicant/wpa_supplicant.conf.template",
                         "/etc/wpa_supplicant/wpa_supplicant.conf",
                         connection_info, next_step);
                 },
